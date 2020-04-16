@@ -1,0 +1,23 @@
+name: Builds
+
+# Run on PRs and pushes straight to master
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+jobs:
+  build_ubuntu:
+    name: Build Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+  build_macos:
+    name: Build MacOS
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
