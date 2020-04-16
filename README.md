@@ -8,7 +8,7 @@ make
 ```
 
 Use it:
-```bash
+```ShellSession
 # Print usage
 localhost->sha256hasher (master) > ./sha256hasher
 Usage:
