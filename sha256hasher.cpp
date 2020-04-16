@@ -38,7 +38,9 @@ int main(int argc, char *argv[]) {
 
     // Must supply a file name
     if (argc < 3) {
-        cerr << "Requires at least a -file filename" << endl;
+        cerr << "Usage:" << endl;
+        cerr << "./sha256hasher -file <filename> -threads <threads to use>" << endl;
+        cerr << "Example: ./sha256hasher -file text.file -threads 8" << endl;
         return 1;
     }
 
