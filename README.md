@@ -1,8 +1,10 @@
 # sha256hasher
 
+![Builds](https://github.com/coleaeason/sha256hasher/workflows/Builds/badge.svg)
+
 Simple multi-threaded CLI tool written in C++ for creating SHA256 hashes from a file of new line separated items.
 
-Supported (Tested) OSes:
+### Supported (Tested) OSes:
 - Linux
 - MacOS
 
