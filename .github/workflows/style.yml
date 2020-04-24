@@ -19,5 +19,3 @@ jobs:
       run: git fetch --depth=1 origin +${{github.base_ref}}
     - name: Run style checks
       uses: coleaeason/actions-uncrustify@v1
-      with: 
-        checkSTD: 'true'
