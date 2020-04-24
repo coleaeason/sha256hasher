@@ -33,7 +33,7 @@ string toUpper(string value)
     return value;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     uint64_t threads = 1;
     string file;
