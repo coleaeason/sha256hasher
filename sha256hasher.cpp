@@ -12,27 +12,29 @@
 using namespace std;
 
 // Hash and return in hex
-string sha256InHex(const string str) {
+string sha256InHex(const string str)
+{
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
     SHA256_Update(&sha256, str.c_str(), str.size());
     SHA256_Final(hash, &sha256);
     stringstream ss;
-    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)
-    {
-        ss << hex << setw(2) << setfill('0') << (int)hash[i];
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+        ss << hex << setw(2) << setfill('0') << (int) hash[i];
     }
     return ss.str();
 }
 
 // Helper function cast a string to uppercase, used for normalizing output.
-string toUpper(string value) {
+string toUpper(string value)
+{
     transform(value.begin(), value.end(), value.begin(), ::toupper);
     return value;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[])
+{
     uint64_t threads = 1;
     string file;
 
@@ -46,12 +48,12 @@ int main(int argc, char *argv[]) {
 
     for (size_t i = 1; i < argc; i++) {
         if (argv[i] == "-file"s) {
-            file = argv[i+1];
+            file = argv[i + 1];
         }
 
         // Check for threads count
         if (argv[i] == "-threads"s) {
-            threads = stoi(argv[i+1]);
+            threads = stoi(argv[i + 1]);
         }
     }
 
@@ -69,7 +71,7 @@ int main(int argc, char *argv[]) {
 
     // Start our threads up
     for (size_t i = 0; i < threads; i++) {
-        threadList.emplace_back([&,i](){
+        threadList.emplace_back([&, i]() {
             while (true) {
                 string temp;
 

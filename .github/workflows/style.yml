@@ -1,0 +1,21 @@
+name: Style
+
+# Run on PRs and pushes straight to master
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+jobs:
+  cpp_style_check:
+    runs-on: ubuntu-latest
+    name: Check C++ Style
+    steps:
+    - name: Checkout this commit
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Check out parent ref
+      run: git fetch --depth=1 origin +${{github.base_ref}}
+    - name: Run style checks
+      uses: coleaeason/actions-uncrustify@v1
