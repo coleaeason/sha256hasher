@@ -21,4 +21,4 @@ clean:
 	rm -rf sha256hasher.dSYM
 
 sha256hasher: sha256hasher.cpp
-	$(GXX) -g -std=c++14 sha256hasher.cpp -O2 -o sha256hasher $(PATHS) -lcrypto -lpthread
+	$(GXX) -g -std=c++17 sha256hasher.cpp -O2 -o sha256hasher $(PATHS) -lcrypto -lpthread
