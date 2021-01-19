@@ -11,6 +11,7 @@
 #include <thread>
 using namespace std;
 
+// A comment
 // Hash and return in hex
 string sha256InHex(const string str)
 {
