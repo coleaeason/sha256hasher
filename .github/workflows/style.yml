@@ -18,4 +18,4 @@ jobs:
     - name: Check out parent ref
       run: git fetch --depth=1 origin +${{github.base_ref}}
     - name: Run style checks
-      uses: coleaeason/actions-uncrustify@v1.1
+      uses: coleaeason/actions-uncrustify@cole_master_main
